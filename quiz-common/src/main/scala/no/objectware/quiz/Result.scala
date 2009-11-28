@@ -1,4 +1,4 @@
-package no.objectware.game
+package no.objectware.quiz
 
 trait Result {
   

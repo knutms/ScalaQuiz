@@ -1,3 +1,3 @@
-package no.objectware.game
+package no.objectware.quiz
 
 case class Player(name:String)

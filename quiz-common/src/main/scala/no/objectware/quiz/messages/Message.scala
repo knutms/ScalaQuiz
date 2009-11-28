@@ -1,6 +1,6 @@
 package no.objectware.quiz.messages
 
-import no.objectware.quiz.{Result => PlayerResult}
+import no.objectware.quiz.{Player, Result => PlayerResult}
 
 sealed trait Message
 

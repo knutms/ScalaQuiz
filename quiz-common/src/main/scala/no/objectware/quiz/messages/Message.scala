@@ -14,6 +14,6 @@ case class Goodbye(message: String) extends Message
 
 case class Question(id: Int, question: String, choices: Map[Int, String]) extends Message
 
-case class Answer(id: Int, choice: Int, timeUsedInMilliseconds: Long) extends Message
+case class Answer(player : Player, id: Int, choice: Int, timeUsedInMilliseconds: Long) extends Message
 
 case class Result(id: Int, correctAnswer: Int, result: List[Player with PlayerResult]) extends Message

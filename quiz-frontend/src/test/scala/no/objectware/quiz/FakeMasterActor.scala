@@ -33,7 +33,6 @@ object FakeMasterActor {
       def rank = rank
     }
   }
-
 }
 
 object FakeMasterBootStrapper {

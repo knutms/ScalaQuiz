@@ -1,14 +1,17 @@
-package no.objectware.game
+package no.objectware.quiz
 
 
 import actors.Actor
 import messages._
 import scala.actors.Actor._
+import scala.actors.remote.RemoteActor._
 
 class FakeMasterActor extends Actor {
   start()
 
   def act = {
+    alive(9000)
+    register('master, self)
     loop {
       receive {
         case JoinMessage(player) => reply(WelcomeMessage(player :: Nil))

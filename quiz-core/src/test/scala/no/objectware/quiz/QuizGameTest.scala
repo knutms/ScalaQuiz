@@ -57,7 +57,7 @@ class QuizGameTest {
     playerMock ! 'answer
     
     twoThreadBarrier.await(1, TimeUnit.SECONDS)
-    
+    assertNotNull(result)
   }
   
 }

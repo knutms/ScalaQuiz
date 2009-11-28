@@ -1,5 +1,7 @@
 package no.objectware.game.messages
 
+import no.objectware.game._
+
 sealed trait Message
 
 case class JoinMessage(player: Player) extends Message

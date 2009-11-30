@@ -37,11 +37,11 @@ class QuizGameTest {
             case 'start => main ! Join(player)
             case 'answer => main ! Answer(player, 1, 2, 0)
             case x: Welcome => println("I'm welcomed!")
-            case q: Question => twoThreadBarrier.await(1, TimeUnit.SECONDS) ; println("I got a question: " + q + " hmm.. not sure")
+            case q: Question => twoThreadBarrier.await(2, TimeUnit.SECONDS) ; println("I got a question: " + q + " hmm.. not sure")
             case r: ResultMessage => {
               println("Got result: " + r)
               result = r;
-              twoThreadBarrier.await(1, TimeUnit.SECONDS)
+              twoThreadBarrier.await(2, TimeUnit.SECONDS)
             }
             case x => println("Got unknwn: " + x)
           }
@@ -50,13 +50,13 @@ class QuizGameTest {
   
     playerMock ! 'start
     
-    twoThreadBarrier.await(1, TimeUnit.SECONDS)
+    twoThreadBarrier.await(2, TimeUnit.SECONDS)
     
     assertEquals(1, main.players.size)
     
     playerMock ! 'answer
     
-    twoThreadBarrier.await(1, TimeUnit.SECONDS)
+    twoThreadBarrier.await(2, TimeUnit.SECONDS)
     assertNotNull(result)
   }
   

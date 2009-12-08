@@ -14,7 +14,7 @@
     </modules>
 
     <properties>
-        <scala.version>2.7.3</scala.version>
+        <scala.version>2.7.5</scala.version>
     </properties>
 
     <repositories>

@@ -17,7 +17,7 @@ class FakeMasterActor extends Actor {
       receive {
         case Join(player) => reply(Welcome(player :: Nil))
         case Leave => reply(Goodbye("Good bye! See you next time."))
-        case Answer(id, choise, timeUsed) => reply(Result(id, id, FakeMasterActor.createPlayerWithResult("You", id, timeUsed, 1) :: Nil))
+        case Answer(_, id, choise, timeUsed) => reply(Result(id, id, FakeMasterActor.createPlayerWithResult("You", id, timeUsed, 1) :: Nil))
       }
     }
   }
@@ -33,7 +33,6 @@ object FakeMasterActor {
       def rank = rank
     }
   }
-
 }
 
 object FakeMasterBootStrapper {

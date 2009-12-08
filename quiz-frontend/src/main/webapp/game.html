@@ -1,0 +1,15 @@
+<lift:surround with="default" at="content">
+	<lift:join.checkJoined/>
+
+	<h2>Hi <lift:game.playerName/>, and welcome to OW Quiz!</h2>
+
+	<lift:game.question/>
+
+	<lift:game.options><div></div></lift:game.options>
+
+	<lift:comet type="QuestionActor"/>
+
+	<a href="/leave">Leave</a>
+
+</lift:surround>
+
